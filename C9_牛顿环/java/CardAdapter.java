@@ -42,7 +42,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
             holder.itemName.setTextColor(context.getColor(R.color.teal_700));
             holder.itemValue.setTextColor(context.getColor(R.color.teal_700));
         }
-        holder.cardView.setOnClickListener(v -> {});
+        holder.cardView.setOnClickListener(v -> {
+            if (card.isPurpal){
+                //todo 弹出有效数字切换器
+            }
+        });
     }
 
     @Override

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 dr[i] = Double.parseDouble(value2);
             }else {
                 canRun = false;
+                Toast.makeText(this, "请检查输入", Toast.LENGTH_SHORT).show();
                 break;
             }
         }
@@ -97,13 +99,8 @@ public class MainActivity extends AppCompatActivity {
             testC9.start();
 
             Intent intent = new Intent(MainActivity.this, OutPutActivity.class);
-            intent.putExtra("final", testC9.getString(2));
-            //todo 传递计算结果
-            /*
-            todo ： 在 OutPutActivity 里添加有效数字，目前想加slider
-            todo 或者，让 final 卡片可以通过点击来修改有效数字
-
-             */
+            intent.putExtra("testc9", testC9);
+            startActivity(intent);
 
         }
     }

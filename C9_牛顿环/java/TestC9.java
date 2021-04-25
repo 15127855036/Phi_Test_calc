@@ -1,6 +1,9 @@
 package com.augtons.tjuttestc9;
 
-public class TestC9 {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class TestC9 implements Parcelable {
     public double[] d30;
     public double[] d29;
     public double[] d28;
@@ -30,6 +33,43 @@ public class TestC9 {
         this.dl = dl;
         this.dr = dr;
     }
+
+    protected TestC9(Parcel in) {
+        d30 = in.createDoubleArray();
+        d29 = in.createDoubleArray();
+        d28 = in.createDoubleArray();
+        d27 = in.createDoubleArray();
+        d26 = in.createDoubleArray();
+        d20 = in.createDoubleArray();
+        d19 = in.createDoubleArray();
+        d18 = in.createDoubleArray();
+        d17 = in.createDoubleArray();
+        d16 = in.createDoubleArray();
+        dl = in.createDoubleArray();
+        dr = in.createDoubleArray();
+        d30d20 = in.readDouble();
+        d29d19 = in.readDouble();
+        d28d18 = in.readDouble();
+        d27d17 = in.readDouble();
+        d26d16 = in.readDouble();
+        dmdn_average = in.readDouble();
+        r_average = in.readDouble();
+        udmdn = in.readDouble();
+        u_r = in.readDouble();
+    }
+
+    public static final Creator<TestC9> CREATOR = new Creator<TestC9>() {
+        @Override
+        public TestC9 createFromParcel(Parcel in) {
+            return new TestC9(in);
+        }
+
+        @Override
+        public TestC9[] newArray(int size) {
+            return new TestC9[size];
+        }
+    };
+
     public void start(){
         d30 = new double[]{dl[0] - dr[0], Math.pow(dl[0] - dr[0], 2)};
         d29 = new double[]{dl[1] - dr[1], Math.pow(dl[1] - dr[1], 2)};
@@ -79,4 +119,33 @@ public class TestC9 {
         }
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeDoubleArray(d30);
+        dest.writeDoubleArray(d29);
+        dest.writeDoubleArray(d28);
+        dest.writeDoubleArray(d27);
+        dest.writeDoubleArray(d26);
+        dest.writeDoubleArray(d20);
+        dest.writeDoubleArray(d19);
+        dest.writeDoubleArray(d18);
+        dest.writeDoubleArray(d17);
+        dest.writeDoubleArray(d16);
+        dest.writeDoubleArray(dl);
+        dest.writeDoubleArray(dr);
+        dest.writeDouble(d30d20);
+        dest.writeDouble(d29d19);
+        dest.writeDouble(d28d18);
+        dest.writeDouble(d27d17);
+        dest.writeDouble(d26d16);
+        dest.writeDouble(dmdn_average);
+        dest.writeDouble(r_average);
+        dest.writeDouble(udmdn);
+        dest.writeDouble(u_r);
+    }
 }
