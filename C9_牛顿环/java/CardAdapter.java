@@ -1,5 +1,6 @@
 package com.augtons.tjuttestc9;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.text.style.AlignmentSpan;
 import android.view.LayoutInflater;
@@ -44,7 +45,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         }
         holder.cardView.setOnClickListener(v -> {
             if (card.isPurpal){
-                //todo 弹出有效数字切换器
+                if (card.onClickListener != null) {
+                    card.onClickListener.onClick();
+                }
             }
         });
     }
@@ -70,10 +73,19 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         public String itemName;
         public String itemValue;
         public boolean isPurpal;
+        private OnClickListener onClickListener;
         public Card(String itemName, String itemValue, boolean isPurpal){
             this.itemName = itemName;
             this.itemValue = itemValue;
             this.isPurpal = isPurpal;
         }
+
+        public void setOnClickListener(OnClickListener onClickListener) {
+            this.onClickListener = onClickListener;
+        }
+
+        public interface OnClickListener{
+            void onClick();
+        };
     }
 }
