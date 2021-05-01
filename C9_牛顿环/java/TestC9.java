@@ -109,7 +109,7 @@ public class TestC9 implements Parcelable {
         double r = MyMath.superRound(r_average, needed);
         if (needed > 0){
             // 小数位置
-            return ("(" + r + " ± " + u +") mm");
+            return ("(" + MyMath.superCeilString(r, needed) + " ± " + MyMath.superRoundString(u, needed) +") mm");
         }else if (needed == 0){
             return ("(" + (int)r + " ± " + (int)u +") mm");
         }else{

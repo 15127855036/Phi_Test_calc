@@ -15,6 +15,14 @@ public class MyMath{
         double pow = Math.pow(10, where);
         return Math.round(val * pow) / pow;
     }
+    public static String superRoundString(double val, int where){
+        String str = String.valueOf(superRound(val, where));
+        StringBuilder str2 = new StringBuilder();
+        for (int i = 0;i < where - str.split("\\.")[1].length(); i++){
+            str2.append("0");
+        }
+        return str + str2;
+    }
     /**
      *
      * @param val 想要取舍的数
@@ -25,6 +33,14 @@ public class MyMath{
         double pow = Math.pow(10, where);
         return Math.floor(val * pow) / pow;
     }
+    public static String superFloorString(double val, int where){
+        String str = String.valueOf(superFloor(val, where));
+        StringBuilder str2 = new StringBuilder();
+        for (int i = 0;i < where - str.split("\\.")[1].length(); i++){
+            str2.append("0");
+        }
+        return str + str2;
+    }
     /**
      *
      * @param val 想要取舍的数
@@ -34,6 +50,14 @@ public class MyMath{
     public static double superCeil(double val, int where){
         double pow = Math.pow(10, where);
         return Math.ceil(val * pow) / pow;
+    }
+    public static String superCeilString(double val, int where){
+        String str = String.valueOf(superCeil(val, where));
+        StringBuilder str2 = new StringBuilder();
+        for (int i = 0;i < where - str.split("\\.")[1].length(); i++){
+            str2.append("0");
+        }
+        return str + str2;
     }
     /**
      *

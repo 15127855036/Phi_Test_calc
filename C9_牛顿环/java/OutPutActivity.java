@@ -58,29 +58,29 @@ public class OutPutActivity extends AppCompatActivity {
         //切换有效数字
         list.add(card);
 
-        list.add(new CardAdapter.Card("D₃₀和(D₃₀)²", MyMath.superRound(Math.abs(testC9.d30[0]), 4) +" mm\n" + MyMath.superRound(testC9.d30[1], 4) +" mm²", false));
-        list.add(new CardAdapter.Card("D₂₉和(D₂₉)²", MyMath.superRound(Math.abs(testC9.d29[0]), 4) +" mm\n" + MyMath.superRound(testC9.d29[1], 4) +" mm²", false));
-        list.add(new CardAdapter.Card("D₂₈和(D₂₈)²", MyMath.superRound(Math.abs(testC9.d28[0]), 4) +" mm\n" + MyMath.superRound(testC9.d28[1], 4) +" mm²", false));
-        list.add(new CardAdapter.Card("D₂₇和(D₂₇)²", MyMath.superRound(Math.abs(testC9.d27[0]), 4) +" mm\n" + MyMath.superRound(testC9.d27[1], 4) +" mm²", false));
-        list.add(new CardAdapter.Card("D₂₆和(D₂₆)²", MyMath.superRound(Math.abs(testC9.d26[0]), 4) +" mm\n" + MyMath.superRound(testC9.d26[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₃₀和(D₃₀)²", MyMath.superRoundString(Math.abs(testC9.d30[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d30[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₂₉和(D₂₉)²", MyMath.superRoundString(Math.abs(testC9.d29[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d29[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₂₈和(D₂₈)²", MyMath.superRoundString(Math.abs(testC9.d28[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d28[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₂₇和(D₂₇)²", MyMath.superRoundString(Math.abs(testC9.d27[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d27[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₂₆和(D₂₆)²", MyMath.superRoundString(Math.abs(testC9.d26[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d26[1], 4) +" mm²", false));
 
-        list.add(new CardAdapter.Card("D₂₀和(D₂₀)²", MyMath.superRound(Math.abs(testC9.d20[0]), 4) +" mm\n" + MyMath.superRound(testC9.d20[1], 4) +" mm²", false));
-        list.add(new CardAdapter.Card("D₁₉和(D₁₉)²", MyMath.superRound(Math.abs(testC9.d20[0]), 4) +" mm\n" + MyMath.superRound(testC9.d20[1], 4) +" mm²", false));
-        list.add(new CardAdapter.Card("D₁₈和(D₁₈)²", MyMath.superRound(Math.abs(testC9.d20[0]), 4) +" mm\n" + MyMath.superRound(testC9.d20[1], 4) +" mm²", false));
-        list.add(new CardAdapter.Card("D₁₇和(D₁₇)²", MyMath.superRound(Math.abs(testC9.d20[0]), 4) +" mm\n" + MyMath.superRound(testC9.d20[1], 4) +" mm²", false));
-        list.add(new CardAdapter.Card("D₁₆和(D₁₆)²", MyMath.superRound(Math.abs(testC9.d20[0]), 4) +" mm\n" + MyMath.superRound(testC9.d20[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₂₀和(D₂₀)²", MyMath.superRoundString(Math.abs(testC9.d20[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d20[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₁₉和(D₁₉)²", MyMath.superRoundString(Math.abs(testC9.d19[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d19[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₁₈和(D₁₈)²", MyMath.superRoundString(Math.abs(testC9.d18[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d18[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₁₇和(D₁₇)²", MyMath.superRoundString(Math.abs(testC9.d17[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d17[1], 4) +" mm²", false));
+        list.add(new CardAdapter.Card("D₁₆和(D₁₆)²", MyMath.superRoundString(Math.abs(testC9.d16[0]), 4) +" mm\n" + MyMath.superRoundString(testC9.d16[1], 4) +" mm²", false));
         
-        list.add(new CardAdapter.Card("(D₃₀)² - (D₂₀)²", MyMath.superRound(testC9.d30d20, 4)+" mm²", false));
-        list.add(new CardAdapter.Card("(D₂₉)² - (D₁₉)²", MyMath.superRound(testC9.d29d19, 4)+" mm²", false));
-        list.add(new CardAdapter.Card("(D₂₈)² - (D₁₈)²", MyMath.superRound(testC9.d28d18, 4)+" mm²", false));
-        list.add(new CardAdapter.Card("(D₂₇)² - (D₁₇)²", MyMath.superRound(testC9.d27d17, 4)+" mm²", false));
-        list.add(new CardAdapter.Card("(D₂₆)² - (D₁₆)²", MyMath.superRound(testC9.d26d16, 4)+" mm²", false));
+        list.add(new CardAdapter.Card("(D₃₀)² - (D₂₀)²", MyMath.superRoundString(testC9.d30d20, 4)+" mm²", false));
+        list.add(new CardAdapter.Card("(D₂₉)² - (D₁₉)²", MyMath.superRoundString(testC9.d29d19, 4)+" mm²", false));
+        list.add(new CardAdapter.Card("(D₂₈)² - (D₁₈)²", MyMath.superRoundString(testC9.d28d18, 4)+" mm²", false));
+        list.add(new CardAdapter.Card("(D₂₇)² - (D₁₇)²", MyMath.superRoundString(testC9.d27d17, 4)+" mm²", false));
+        list.add(new CardAdapter.Card("(D₂₆)² - (D₁₆)²", MyMath.superRoundString(testC9.d26d16, 4)+" mm²", false));
 
-        list.add(new CardAdapter.Card("Dm² - Dn² (平均)",  MyMath.superRound(testC9.dmdn_average, 4)+ " mm²", false));
-        list.add(new CardAdapter.Card("U(Dm² - Dn²)",  MyMath.superRound(testC9.udmdn, 4)+ " mm²", false));
+        list.add(new CardAdapter.Card("Dm² - Dn² (平均)",  MyMath.superRoundString(testC9.dmdn_average, 4)+ " mm²", false));
+        list.add(new CardAdapter.Card("U(Dm² - Dn²)",  MyMath.superRoundString(testC9.udmdn, 4)+ " mm²", false));
 
-        list.add(new CardAdapter.Card("R (平均)",  MyMath.superRound(testC9.r_average, 4)+ " mm", false));
-        list.add(new CardAdapter.Card("U(R)",  MyMath.superRound(testC9.u_r, 4)+ " mm", false));
+        list.add(new CardAdapter.Card("R (平均)",  MyMath.superRoundString(testC9.r_average, 4)+ " mm", false));
+        list.add(new CardAdapter.Card("U(R)",  MyMath.superRoundString(testC9.u_r, 4)+ " mm", false));
 
 
         builder.setTitle("更改有效数字位数")

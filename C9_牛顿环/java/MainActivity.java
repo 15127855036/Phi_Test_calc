@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
+    private Handler handler = new Handler();
     private List<MainAdapter.Edit> list = new ArrayList<>();
 
     private final String[] testValue1 = {"17.823", "17.955", "18.087", "18.209", "18.340", "19.189", "19.355", "19.508", "19.668", "19.845"};
@@ -33,16 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler1);
 
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
-        for (int i = 30; i >= 26;i--){
-            list.add(new MainAdapter.Edit(String.valueOf(i)));
-        }
-        for (int i = 20; i >= 16;i--){
-            list.add(new MainAdapter.Edit(String.valueOf(i)));
-        }
-        recyclerView.setAdapter(new MainAdapter(list));
+        reloadInputList();
 
         buttonClear.setOnLongClickListener(v -> {
+            reloadInputList();
             for (int i = 0; i<10; i++){
                 MainAdapter.Edit edit = list.get(i);
                 if (edit.textInputEditText1 != null){
@@ -57,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
+
+        //todo 重新加载
         buttonClear.setOnClickListener(v -> {
+            //保留动画
             for (int i = 0; i<10; i++){
                 MainAdapter.Edit edit = list.get(i);
                 if (edit.textInputEditText1 != null){
@@ -69,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 edit.value1 = "";
                 edit.value2 = "";
             }
+            //重新加载一次列表，防止内存错乱
+            //reloadInputList();
         });
     }
 
@@ -103,5 +104,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
 
         }
+    }
+    public void reloadInputList(){
+        list.clear();
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+        for (int i = 30; i >= 26;i--){
+            list.add(new MainAdapter.Edit(String.valueOf(i)));
+        }
+        for (int i = 20; i >= 16;i--){
+            list.add(new MainAdapter.Edit(String.valueOf(i)));
+        }
+        recyclerView.setAdapter(new MainAdapter(list));
     }
 }
