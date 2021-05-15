@@ -44,10 +44,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
             holder.itemValue.setTextColor(context.getColor(R.color.teal_700));
         }
         holder.cardView.setOnClickListener(v -> {
-            if (card.isPurpal){
-                if (card.onClickListener != null) {
-                    card.onClickListener.onClick();
-                }
+            if (card.onClickListener != null) {
+                card.onClickListener.onClick();
             }
         });
     }

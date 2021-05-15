@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class TestC1 implements Parcelable {
-    public static final double captal_F = 176.4;// 单位N
+    public static final double captal_F = 58.8;// 单位N
     public static final double uL = 0.5; //单位毫米
     public static final double ux = 0.5; //单位毫米
     public static final double ub = 0.5; //单位毫米
@@ -147,7 +147,7 @@ public class TestC1 implements Parcelable {
         double r = MyMath.superRound(captal_Y, needed);
         if (needed > 0){
             // 小数位置
-            return ("(" + MyMath.superCeilString(r, needed) + " ± " + MyMath.superRoundString(u, needed) +") N/m²");
+            return ("(" + MyMath.superRoundString(r, needed) + " ± " + MyMath.superCeilString(u, needed) +") N/m²");
         }else if (needed == 0){
             return ("(" + (int)r + " ± " + (int)u +") N/m²");
         }else{

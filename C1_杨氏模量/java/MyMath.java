@@ -69,10 +69,16 @@ public class MyMath{
     }
 
     public static String getSmallNum(int val) throws IndexOutOfBoundsException{
+
+        String string = "";
+        if(val<0){
+            string = "⁻";
+        }
+        val = Math.abs(val);
         if (val <= 9 && val >=0) {
-            return smallNum[val];
+            return string + smallNum[val];
         }else if (val >= 10 && val <= 99){
-            return smallNum[val/10] + smallNum[val - 10 * (val/10)];
+            return string + smallNum[val/10] + smallNum[val - 10 * (val/10)];
         }
         else throw new IndexOutOfBoundsException();
     }
@@ -109,6 +115,18 @@ public class MyMath{
                 }
             }
             return count;
+        }
+    }
+
+    public static String replaceE(double val, int where){
+        String stringY = String.valueOf(val);
+        String[] stringsY;
+        if(stringY.contains("E")){
+            stringsY = stringY.split("E");
+            stringsY[0] = stringsY[0].substring(0, where + 1);
+            return stringsY[0] + "×10"+MyMath.getSmallNum(Integer.parseInt(stringsY[1]));
+        }else{
+            return MyMath.superRoundString(val, where);
         }
     }
 }

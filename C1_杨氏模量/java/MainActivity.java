@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
             0.5898, 0.8115, 0.07727
     };
     private final double[][] testValue1 = {
-            {6.58, 6.82, 7.12, 7.55, 7.88, 8.29},
-            {6.49, 6.81, 7.20, 7.53, 7.90, 8.29}
+            {6.58e-2, 6.82e-2, 7.12e-2, 7.55e-2, 7.88e-2, 8.29e-2},
+            {6.49e-2, 6.81e-2, 7.20e-2, 7.53e-2, 7.90e-2, 8.29e-2}
     };
     private Button buttonRun;
     private Button buttonClear;
@@ -168,16 +168,16 @@ public class MainActivity extends AppCompatActivity {
         list.add(new MainAdapter.Edit("8kg", MainAdapter.EditMode.DOUBLE));
         list.add(new MainAdapter.Edit("10kg", MainAdapter.EditMode.DOUBLE));
 
-        list.add((new MainAdapter.Edit("D测量第1次", MainAdapter.EditMode.ONE)));
-        list.add((new MainAdapter.Edit("D测量第2次", MainAdapter.EditMode.ONE)));
-        list.add((new MainAdapter.Edit("D测量第3次", MainAdapter.EditMode.ONE)));
-        list.add((new MainAdapter.Edit("D测量第4次", MainAdapter.EditMode.ONE)));
-        list.add((new MainAdapter.Edit("D测量第5次", MainAdapter.EditMode.ONE)));
-        list.add((new MainAdapter.Edit("D测量第6次", MainAdapter.EditMode.ONE)));
+        list.add((new MainAdapter.Edit("D测量第1次(毫米)", MainAdapter.EditMode.ONE)));
+        list.add((new MainAdapter.Edit("D测量第2次(毫米)", MainAdapter.EditMode.ONE)));
+        list.add((new MainAdapter.Edit("D测量第3次(毫米)", MainAdapter.EditMode.ONE)));
+        list.add((new MainAdapter.Edit("D测量第4次(毫米)", MainAdapter.EditMode.ONE)));
+        list.add((new MainAdapter.Edit("D测量第5次(毫米)", MainAdapter.EditMode.ONE)));
+        list.add((new MainAdapter.Edit("D测量第6次(毫米)", MainAdapter.EditMode.ONE)));
 
-        list.add((new MainAdapter.Edit("L", MainAdapter.EditMode.ONE)));
-        list.add((new MainAdapter.Edit("x", MainAdapter.EditMode.ONE)));
-        list.add((new MainAdapter.Edit("b", MainAdapter.EditMode.ONE)));
+        list.add((new MainAdapter.Edit("L(米)", MainAdapter.EditMode.ONE)));
+        list.add((new MainAdapter.Edit("x(米)", MainAdapter.EditMode.ONE)));
+        list.add((new MainAdapter.Edit("b(米)", MainAdapter.EditMode.ONE)));
 
 
         recyclerView.setAdapter(new MainAdapter(list));
